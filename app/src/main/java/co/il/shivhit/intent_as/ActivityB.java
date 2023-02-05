@@ -2,12 +2,14 @@ package co.il.shivhit.intent_as;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class ActivityB extends AppCompatActivity {
+public class ActivityB extends AppCompatActivity /*implements View.OnClickListener*/ {
 
     private TextView txtName;
     private TextView txtAge;
@@ -27,9 +29,14 @@ public class ActivityB extends AppCompatActivity {
         txtName  = findViewById(R.id.txtName);
         txtAge   = findViewById((R.id.txtAge));
         btnGoToA = findViewById(R.id.btnGoToA);
+
+        //btnGoToA.setOnClickListener(this);
     }
 
     private void GetExtras() {
+        //txtName.setVisibility(View.VISIBLE);
+        //txtAge.setVisibility(View.VISIBLE);
+
         /*
         String name = getIntent().getStringExtra("NAME");
         int    age  = getIntent().getIntExtra("AGE", 1);
@@ -38,4 +45,14 @@ public class ActivityB extends AppCompatActivity {
         txtAge.setText(String.valueOf(age));
          */
     }
+
+    /*
+    @Override
+    public void onClick(View v) {
+        if (v == btnGoToA){
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
+    }
+     */
 }

@@ -2,6 +2,7 @@ package co.il.shivhit.intent_as;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -20,6 +21,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         InitailizeViews();
+
+        SetVisible(false);
     }
 
     private void InitailizeViews() {
@@ -54,5 +57,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
          intent.putExtra("NAME", etName.getText().toString());
         intent.putExtra("AGE", Integer.valueOf((etAge.getText().toString())));
         */
+    }
+
+    private void SetVisible(boolean b) {
+        etName.setVisibility((b) ? View.VISIBLE : View.INVISIBLE);
+        etAge.setVisibility((b) ? View.VISIBLE : View.INVISIBLE);
     }
 }
